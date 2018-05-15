@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<h1>Your daily tasks</h1>
+
+<% @tasks.each do |task| %>
+<p><% completed = task.completed ? "fa-check-square" : "fa-square" %>
+ <i class="far <%= completed %>"></i> → <%= link_to task.title, task_path(task) %>
+ - <%= link_to "🗑", task_path(task), method: :delete %></p>
+<% end %>
+
+<p><%= link_to "create a new task", new_path %></p>
+
+

@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<h1><%= @task.title %></h1>
+<p><% completed = @task.completed ? "fa-check-square" : "fa-square" %>
+ <i class="far <%= completed %>"></i> → <%= @task.details %></p>
+
+<p><%= link_to "edit this task", edit_path(@task) %></p>
+<p><%= link_to "Back to your list of tasks", tasks_path %> - <%= link_to "🗑?", task_path(@task), method: :delete %></p>
